@@ -1,0 +1,2002 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 南京大学全国模拟联合国大会</title>
+    <link rel="stylesheet" href="https://fontsource.org/files/inter/latin/400.css">
+    <link rel="stylesheet" href="https://fontsource.org/files/inter/latin/600.css">
+    <link rel="stylesheet" href="https://fontsource.org/files/inter/latin/700.css">
+    
+    <style>
+        :root {
+            --bg-color: #F9FAFB;
+            --card-bg: #FFFFFF;
+            --text-main: #1a1a1a;
+            --text-secondary: #4b5563;
+            --accent: #592489;
+            --border-color: #e5e7eb;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        header {
+            padding: 2rem 5%;
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .header-title {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--text-main);
+            line-height: 1.4;
+        }
+
+        .header-title span {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: var(--text-secondary);
+            margin-top: 0.25rem;
+            letter-spacing: 0.05em;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--card-bg);
+            padding: 0 5%;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .nav-list {
+            display: flex;
+            list-style: none;
+            justify-content: space-between;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-item {
+            position: relative;
+            flex: 1;
+            text-align: center;
+        }
+
+        .nav-link {
+            display: block;
+            padding: 1.5rem 1rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--accent);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            transition: var(--transition);
+        }
+
+        .nav-link.active::after {
+            width: 80%;
+        }
+
+        /* Dropdown Menu */
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-top: 2px solid var(--accent);
+            border-radius: 0 0 8px 8px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: var(--transition);
+            z-index: 1000;
+            padding: 0.5rem 0;
+        }
+
+        .nav-item:hover .dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-item {
+            display: block;
+            padding: 0.75rem 1.5rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .dropdown-item:hover {
+            background-color: #faf5ff;
+            color: var(--accent);
+            padding-left: 2rem;
+        }
+
+        /* Main Content */
+        main {
+            flex: 1;
+            padding: 2rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .section {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: var(--text-main);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent);
+            display: inline-block;
+        }
+
+        .content-box {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .content-box p {
+            margin-bottom: 1rem;
+        }
+
+        .content-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Schedule List */
+        .schedule-list {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .schedule-item {
+            padding: 1rem 1.5rem;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .schedule-item:hover {
+            border-color: var(--accent);
+            box-shadow: 0 4px 8px rgba(89, 36, 137, 0.1);
+        }
+
+        .schedule-item.important {
+            border-left: 4px solid var(--accent);
+            background: #faf5ff;
+        }
+
+        .schedule-date {
+            font-weight: 600;
+            color: var(--accent);
+            min-width: 140px;
+            font-size: 0.9rem;
+        }
+
+        .schedule-content {
+            color: var(--text-secondary);
+            flex: 1;
+        }
+
+        .schedule-tag {
+            display: inline-block;
+            padding: 0.2rem 0.5rem;
+            background: var(--accent);
+            color: #fff;
+            font-size: 0.75rem;
+            border-radius: 4px;
+            margin-right: 0.5rem;
+            font-weight: 600;
+        }
+
+        /* Two Column Layout */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .info-box {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .info-box h3 {
+            color: var(--accent);
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .info-list {
+            list-style: none;
+        }
+
+        .info-item {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+        }
+
+        .info-item:last-child {
+            border-bottom: none;
+        }
+
+        .info-label {
+            font-weight: 600;
+            color: var(--text-main);
+            min-width: 100px;
+            flex-shrink: 0;
+        }
+
+        .info-value {
+            color: var(--text-secondary);
+            flex: 1;
+        }
+
+        .venue-description {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-color);
+            line-height: 1.8;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            text-align: justify;
+        }
+
+        /* Content Cards for Writing Guide */
+        .content-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .content-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .content-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 8px 16px rgba(89, 36, 137, 0.1);
+            transform: translateY(-4px);
+        }
+
+        .content-card-header {
+            padding: 2rem 1.5rem;
+            background: linear-gradient(135deg, #faf5ff 0%, #ffffff 100%);
+            border-bottom: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .content-card-header h3 {
+            color: var(--accent);
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .content-card-header h3::after {
+            content: '→';
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .content-card:hover .content-card-header h3::after {
+            transform: translateX(5px);
+        }
+
+        .content-card-body {
+            padding: 1.5rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        /* Sub-sections within detail pages */
+        .sub-section {
+            margin-bottom: 2rem;
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .sub-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .sub-section-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--accent);
+            display: inline-block;
+        }
+
+        .sub-item {
+            padding: 1.5rem;
+            background: var(--bg-color);
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--accent);
+        }
+
+        .sub-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .sub-item h4 {
+            color: var(--text-main);
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .sub-item p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        /* Back Button */
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: var(--transition);
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+        }
+
+        .back-button:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* English Writing Specific */
+        .english-section {
+            margin-bottom: 2rem;
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .english-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .english-section-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--accent);
+            display: inline-block;
+        }
+
+        .english-item {
+            padding: 1.5rem;
+            background: var(--bg-color);
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--accent);
+        }
+
+        .english-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .english-item h4 {
+            color: var(--text-main);
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .english-item p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        /* Video News & AI Specific */
+        .content-section {
+            margin-bottom: 2.5rem;
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .content-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .content-section-title {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--accent);
+            display: inline-block;
+        }
+
+        .content-section-content {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 2;
+            text-align: justify;
+        }
+
+        .content-section-content p {
+            margin-bottom: 1.25rem;
+        }
+
+        .content-section-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .content-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .content-list li {
+            padding: 1.25rem 1.5rem;
+            background: var(--bg-color);
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--accent);
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .content-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .content-list li strong {
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        /* AI Tools Grid */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .tool-card {
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 120px;
+        }
+
+        .tool-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 4px 8px rgba(89, 36, 137, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .tool-card h4 {
+            color: var(--text-main);
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        /* Contact Specific */
+        .contact-section {
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            padding: 1.25rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .contact-item:last-child {
+            border-bottom: none;
+        }
+
+        .contact-label {
+            font-weight: 600;
+            color: var(--accent);
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .contact-value {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .contact-value a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .contact-value a:hover {
+            text-decoration: underline;
+        }
+
+        .team-list {
+            list-style: none;
+            padding-left: 1.5rem;
+        }
+
+        .team-list li {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 2;
+            position: relative;
+        }
+
+        .team-list li::before {
+            content: '•';
+            color: var(--accent);
+            position: absolute;
+            left: -1.5rem;
+        }
+
+        .contact-note {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: #faf5ff;
+            border-radius: 6px;
+            border-left: 4px solid var(--accent);
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        /* Download Section Specific */
+        .download-section {
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 2rem;
+        }
+
+        .download-section h3 {
+            color: var(--accent);
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--accent);
+            display: inline-block;
+        }
+
+        .download-list {
+            list-style: none;
+        }
+
+        .download-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.25rem 1.5rem;
+            background: var(--bg-color);
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        .download-item:hover {
+            border-color: var(--accent);
+            box-shadow: 0 4px 8px rgba(89, 36, 137, 0.1);
+        }
+
+        .download-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .download-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .download-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #faf5ff 0%, #ffffff 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .download-details h4 {
+            color: var(--text-main);
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .download-details p {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        .download-btn {
+            padding: 0.75rem 1.5rem;
+            background: var(--accent);
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+        }
+
+        .download-btn:hover {
+            background: #4a1f70;
+            transform: translateY(-2px);
+        }
+
+        .download-tag {
+            display: inline-block;
+            padding: 0.2rem 0.5rem;
+            background: var(--accent);
+            color: #fff;
+            font-size: 0.7rem;
+            border-radius: 4px;
+            margin-left: 0.5rem;
+            font-weight: 600;
+        }
+
+        /* News Genre Cards */
+        .genre-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .genre-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .genre-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 8px 16px rgba(89, 36, 137, 0.1);
+            transform: translateY(-4px);
+        }
+
+        .genre-card-header {
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #faf5ff 0%, #ffffff 100%);
+            border-bottom: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .genre-card-header h4 {
+            color: var(--accent);
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .genre-card-body {
+            padding: 1.5rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        /* Example Box */
+        .example-box {
+            background: #faf5ff;
+            border: 1px solid var(--accent);
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 1.5rem 0;
+        }
+
+        .example-box h4 {
+            color: var(--accent);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .example-box p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            white-space: pre-line;
+        }
+
+        /* Seat Table */
+        .seat-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .seat-table th,
+        .seat-table td {
+            padding: 1rem 1.5rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .seat-table th {
+            background: linear-gradient(135deg, #faf5ff 0%, #ffffff 100%);
+            color: var(--text-main);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .seat-table td {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .seat-table tr:hover {
+            background: #faf5ff;
+        }
+
+        .seat-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .committee-cell {
+            font-weight: 500;
+            color: var(--text-main);
+            background: #faf5ff;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--card-bg);
+            padding: 2rem 5%;
+            border-top: 1px solid var(--border-color);
+            margin-top: auto;
+        }
+
+        .footer-slogan {
+            color: var(--text-secondary);
+            font-style: italic;
+            font-size: 0.9rem;
+            border-left: 3px solid var(--accent);
+            padding-left: 1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-list {
+                flex-wrap: wrap;
+            }
+            .nav-item {
+                flex: 0 0 50%;
+            }
+            .dropdown {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                box-shadow: none;
+                border-left: 2px solid var(--accent);
+                border-radius: 0;
+                display: none;
+            }
+            .nav-item:hover .dropdown {
+                display: block;
+            }
+            .header-title {
+                font-size: 1.2rem;
+            }
+            .header-title span {
+                font-size: 0.8rem;
+            }
+            .two-column, .content-cards, .tools-grid {
+                grid-template-columns: 1fr;
+            }
+            .schedule-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .schedule-date {
+                margin-bottom: 0.5rem;
+            }
+            .download-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+            .download-btn {
+                width: 100%;
+                justify-content: center;
+            }
+            .seat-table {
+                font-size: 0.85rem;
+            }
+            .seat-table th,
+            .seat-table td {
+                padding: 0.75rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-title">
+            2026 年南京大学全国模拟联合国大会
+            <span>Nanjing University National Model United Nations Conference 2026</span>
+        </div>
+    </header>
+
+    <nav>
+        <ul class="nav-list">
+            <li class="nav-item">
+                <a class="nav-link active" onclick="showPage('home')">首页</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link">什么是主新闻中心 ▼</a>
+                <div class="dropdown">
+                    <a class="dropdown-item" onclick="showPage('mpc-intro')">委员会介绍</a>
+                    <a class="dropdown-item" onclick="showPage('seat-setting')">席位设置</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link">主新闻中心需要做什么 ▼</a>
+                <div class="dropdown">
+                    <a class="dropdown-item" onclick="showPage('chinese-writing')">中文新闻写作指导</a>
+                    <a class="dropdown-item" onclick="showPage('english-writing')">英文新闻写作指导</a>
+                    <a class="dropdown-item" onclick="showPage('newspaper-design')">报纸设计</a>
+                    <a class="dropdown-item" onclick="showPage('video-guide')">视频新闻制作</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link">主席团的小巧思 ▼</a>
+                <div class="dropdown">
+                    <a class="dropdown-item" onclick="showPage('video-news')">视频新闻：从 CCTV 到 bilibili</a>
+                    <a class="dropdown-item" onclick="showPage('ai-mpc')">AI+MPC：AI 如何提质增效</a>
+                    <a class="dropdown-item" onclick="showPage('motion-advice')">学术准备建议</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" onclick="showPage('download')">文件下载</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link">联系我们 ▼</a>
+                <div class="dropdown">
+                    <a class="dropdown-item" onclick="showPage('contact-us')">联系我们</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Home -->
+        <div id="home" class="section active">
+            <h2>近期安排</h2>
+            <ul class="schedule-list">
+                <li class="schedule-item important">
+                    <span class="schedule-date">2026-03-21</span>
+                    <span class="schedule-content"><span class="schedule-tag">重要</span>主新闻中心一轮学培</span>
+                </li>
+                <li class="schedule-item">
+                    <span class="schedule-date">2026-03-17</span>
+                    <span class="schedule-content">主新闻中心平台上线</span>
+                </li>
+                <li class="schedule-item">
+                    <span class="schedule-date">2026-03-15</span>
+                    <span class="schedule-content">大会录取结果与席位分配发布</span>
+                </li>
+                <li class="schedule-item">
+                    <span class="schedule-date">2026-03-08</span>
+                    <span class="schedule-content">大会代表报名截止</span>
+                </li>
+            </ul>
+
+            <div class="two-column">
+                <div class="info-box">
+                    <h3>会议信息</h3>
+                    <ul class="info-list">
+                        <li class="info-item">
+                            <span class="info-label">大会名称</span>
+                            <span class="info-value">2026 年南京大学全国模拟联合国大会</span>
+                        </li>
+                        <li class="info-item">
+                            <span class="info-label">大会主题</span>
+                            <span class="info-value">拥抱多边，青年当先</span>
+                        </li>
+                        <li class="info-item">
+                            <span class="info-label">主办单位</span>
+                            <span class="info-value">南京大学国际关系学院</span>
+                        </li>
+                        <li class="info-item">
+                            <span class="info-label">承办单位</span>
+                            <span class="info-value">南京大学学生模拟联合国协会</span>
+                        </li>
+                        <li class="info-item">
+                            <span class="info-label">协办单位</span>
+                            <span class="info-value">南京大学国际关系学院研究生会</span>
+                        </li>
+                        <li class="info-item">
+                            <span class="info-label">大会时间</span>
+                            <span class="info-value">2026 年 4 月 10 日——4 月 12 日</span>
+                        </li>
+                        <li class="info-item">
+                            <span class="info-label">大会地点</span>
+                            <span class="info-value">中国 - 南京 - 南京大学仙林校区</span>
+                        </li>
+                        <li class="info-item">
+                            <span class="info-label">面向对象</span>
+                            <span class="info-value">全日制高中及高等院校在读学生</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="info-box">
+                    <h3>会场信息</h3>
+                    <ul class="info-list">
+                        <li class="info-item">
+                            <span class="info-label">委员会名称</span>
+                            <span class="info-value">主新闻中心/Main Press Center</span>
+                        </li>
+                        <li class="info-item">
+                            <span class="info-label">工作语言</span>
+                            <span class="info-value">中文/English</span>
+                        </li>
+                        <li class="info-item">
+                            <span class="info-label">代表制</span>
+                            <span class="info-value">混合代表制</span>
+                        </li>
+                    </ul>
+                    <div class="venue-description">
+                        <p>在数字世界与物理世界加速融合之际，新型数字技术正在重塑传统的新闻生产机制，并给新闻传播体系带来了前所未有的深刻变革。与此同时，新闻与政治传播的融合态势愈发明显，新闻边界逐渐模糊，取而代之的是混杂了政治意图的媒体议程。</p>
+                        <p style="margin-top: 1rem;">在这个大背景下，主新闻中心作为模拟联合国中模拟现实舆论的会场，更为重要也更为复杂。希望各位记者能将最真实的观察和最客观的叙事刻写在每一篇新闻稿件之中。技术既是包袱，也是恩赐，是一种利弊同在的产物。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MPC Introduction -->
+        <div id="mpc-intro" class="section">
+            <h2>委员会介绍</h2>
+            <div class="content-box">
+                <p>从报纸到社媒，新闻一直在；从黄色新闻到新黄色新闻，新闻业一直在面临挑战。媒体的公信力一降再降，大众呼喊着"新闻已死"，社会对假新闻、烂新闻嗤之以鼻，世界却更加需要专业记者。前线战场的残酷、复杂多变的世界、不为人知的黑暗，世界需要专业记者。</p>
+                <p>同样地，模拟联合国也离不开媒体的声量。在这个模拟联合国活动中营造现实舆论环境的会场，主新闻中心（Main Press Center），媒体代表的存在能够让模拟联合国活动更加贴近真实世界，展现新闻舆论之于国际事务不可忽视的作用。作为第四权力，媒体发挥新闻的民主功能，为公民提供其所需信息，并对政府运行和决策进行监督、促进和制衡。</p>
+                <p>主新闻中心的代表将以国际知名媒体的身份参与会议，通过扮演记者的角色，履行主新闻中心代表的职责。代表们需要在非闭门会议期间驻派于会场中，观察会议进程、传播会议信息、分析会场形势、传达外交成果、对话与会代表，使新闻媒体参与到会场进程中。</p>
+                <p>随着新兴媒体技术的发展，新闻媒体以其更新速度更快、交互性更强、多模态传播的特征，有效地进行信息传播、民意反馈、舆论引导、议程设置，已成为国际事务中不可或缺的一环。同时，民众的期待也对记者的专业性提出了更高的要求。来到主新闻中心的记者们所要做的，不仅仅是信息的传递，如何挖掘新闻的内核、实现交互式的新闻都是记者所需要思考的。记者，依然是船头的"瞭望者"。</p>
+            </div>
+        </div>
+
+        <!-- Seat Setting -->
+        <div id="seat-setting" class="section">
+            <h2>席位设置</h2>
+            <div class="content-box">
+                <table class="seat-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 40%;">驻场委员会</th>
+                            <th>席位（媒体全称）</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="5" class="committee-cell">联合国大会第六委员会 (UNGA6)</td>
+                            <td>纽约时报</td>
+                        </tr>
+                        <tr>
+                            <td>卫报</td>
+                        </tr>
+                        <tr>
+                            <td>欧洲新闻台</td>
+                        </tr>
+                        <tr>
+                            <td>加拿大广播公司</td>
+                        </tr>
+                        <tr>
+                            <td>金字塔报</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="6" class="committee-cell">二十国集团领导人峰会 (G20)</td>
+                            <td>俄通社 - 塔斯社</td>
+                        </tr>
+                        <tr>
+                            <td>南方电视台</td>
+                        </tr>
+                        <tr>
+                            <td>环球时报</td>
+                        </tr>
+                        <tr>
+                            <td>华尔街日报</td>
+                        </tr>
+                        <tr>
+                            <td>非洲新闻电视台</td>
+                        </tr>
+                        <tr>
+                            <td>半岛电视台</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="4" class="committee-cell">The 8th IUCN World Conservation Congress (IUCN)</td>
+                            <td>Associated Press</td>
+                        </tr>
+                        <tr>
+                            <td>Mongabay</td>
+                        </tr>
+                        <tr>
+                            <td>The Guardian</td>
+                        </tr>
+                        <tr>
+                            <td>Xinhua News Agency</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="4" class="committee-cell">United Nations Committee on the Peaceful Uses of Outer Space (COPUOS)</td>
+                            <td>Africanews</td>
+                        </tr>
+                        <tr>
+                            <td>Reuters</td>
+                        </tr>
+                        <tr>
+                            <td>Bloomberg</td>
+                        </tr>
+                        <tr>
+                            <td>Agencia EFE</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Chinese Writing Main -->
+        <div id="chinese-writing" class="section">
+            <h2>中文新闻写作指导</h2>
+            <div class="content-cards">
+                <div class="content-card" onclick="showPage('news-structure')">
+                    <div class="content-card-header">
+                        <h3>新闻结构</h3>
+                    </div>
+                    <div class="content-card-body">
+                        <p>了解倒金字塔、新华体、华尔街日报体等经典新闻结构</p>
+                    </div>
+                </div>
+                <div class="content-card" onclick="showPage('news-genre')">
+                    <div class="content-card-header">
+                        <h3>新闻体裁</h3>
+                    </div>
+                    <div class="content-card-body">
+                        <p>学习前瞻性报道、消息、短评、专访、社论等写作体裁</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- News Structure Detail -->
+        <div id="news-structure" class="section">
+            <div class="back-button" onclick="showPage('chinese-writing')">
+                ← 返回中文新闻写作指导
+            </div>
+            <h2>新闻结构</h2>
+            
+            <div class="sub-section">
+                <h3 class="sub-section-title">倒金字塔结构</h3>
+                <p>倒金字塔结构是一种传统的消息结构形式，产生于美国南北战争时期。倒金字塔结构是按照新闻价值的递减原则，即新闻事实的重要程度、新鲜程度，以及读者感兴趣的程度等，依次将新闻事实写出的一种结构形式。</p>
+                <br>
+                <p>倒金字塔结构的优点在于无论读者何时离开新闻介质，纵然只是看了开头，也可以了解新闻的核心内容，能在短时间内最大限度地实现新闻传播。</p>
+                <br>
+                <p>在模拟联合国中，倒金字塔结构是最为广泛运用的新闻结构之一。在撰写此类结构的新闻时，媒体代表需要结合会场动向，精准把握重点事件加以撰写。当然，由于媒体的立场各有不同，媒体代表选取的重点也会不同。</p>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="sub-section-title">新华体</h3>
+                <p>"新华体"是对新华社新闻报道基本文体的一种习惯性用法，广泛应用于中国各大媒体机构和单位宣传口。一般来说，新华体具有段落分明、一目了然的优点，并且对重大事件的报道往往有耳目一新的角度。同时，新华体侧重于宣传，因此相较其他结构，往往会有更为深刻的评论。</p>
+                <br>
+                <p>但同时，新华体注重对导语、主体和结尾"三段式写作"的限定，这也使其缺乏活力。</p>
+                <br>
+                <p>在模拟联合国会场中，非中国媒体的媒体代表应当注意对新华体的使用。</p>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="sub-section-title">华尔街日报体</h3>
+                <p>《华尔街日报》体是美国经济报刊《华尔街日报》（The Wall Street Journal）所采用并发扬光大的一种新闻写作体裁。其最大的特点便是"讲故事"，从而让原本枯燥无味的新闻变得更加生动、吸引他人的眼球。</p>
+                <br>
+                <p>《华尔街日报》体的主要特点可以归结为："采用讲故事的方式，以引人入胜、扣人心弦的单则人物故事或者趣闻开头，自然过渡至所要报道的新闻主题，在层层深入的阐释和探讨之后，将焦点回到开篇的人物或故事上，首尾呼应，升华主题。"</p>
+            </div>
+        </div>
+
+        <!-- News Genre Main -->
+        <div id="news-genre" class="section">
+            <div class="back-button" onclick="showPage('chinese-writing')">
+                ← 返回中文新闻写作指导
+            </div>
+            <h2>新闻体裁</h2>
+            <div class="genre-cards">
+                <div class="genre-card" onclick="showPage('genre-prospective')">
+                    <div class="genre-card-header">
+                        <h4>前瞻性报道</h4>
+                    </div>
+                    <div class="genre-card-body">
+                        <p>根据事物发展规律进行的预见性报道</p>
+                    </div>
+                </div>
+                <div class="genre-card" onclick="showPage('genre-news')">
+                    <div class="genre-card-header">
+                        <h4>消息</h4>
+                    </div>
+                    <div class="genre-card-body">
+                        <p>最简短、时效性最强的新闻体裁</p>
+                    </div>
+                </div>
+                <div class="genre-card" onclick="showPage('genre-comment')">
+                    <div class="genre-card-header">
+                        <h4>短评</h4>
+                    </div>
+                    <div class="genre-card-body">
+                        <p>事件记录与评论相结合的新闻形式</p>
+                    </div>
+                </div>
+                <div class="genre-card" onclick="showPage('genre-interview')">
+                    <div class="genre-card-header">
+                        <h4>专访</h4>
+                    </div>
+                    <div class="genre-card-body">
+                        <p>记录受访者观点与立场的重要形式</p>
+                    </div>
+                </div>
+                <div class="genre-card" onclick="showPage('genre-editorial')">
+                    <div class="genre-card-header">
+                        <h4>社论</h4>
+                    </div>
+                    <div class="genre-card-body">
+                        <p>针对重大事件发表的指导性评论</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Prospective Report -->
+        <div id="genre-prospective" class="section">
+            <div class="back-button" onclick="showPage('news-genre')">
+                ← 返回新闻体裁
+            </div>
+            <h2>前瞻性报道</h2>
+            <div class="sub-section">
+                <p>前瞻性报道，是一种根据事物的发展规律，抓住苗头性事物和问题进行的预见性报道，其因预测的特点而广泛出现于经济新闻之中，并逐渐扩展至国际新闻等多重领域。</p>
+                <br>
+                <p>在模联会场中，前瞻性报道是媒体代表把握会场背景的一把钥匙，也是媒体代表与所驻会场代表进行沟通的初步媒介。因此，在撰写前瞻性报道的过程中，媒体代表需要掌握三重对象——会议背景、所代表媒体、场上代表——和他们之间的联系。</p>
+                <br>
+                <p><strong>首先是会议背景。</strong>前瞻性报道应当基于近期发生又未完全明朗的事实，展现媒体的分析和预测。为此，媒体代表需要广泛阅读所驻委员会的背景信息和文件，了解各国就这一议题在此前取得的成果和不足，从而归纳出会议中可能涉及的重点。</p>
+                <br>
+                <p><strong>其次是所代表媒体。</strong>只要是人所书写的内容，都不可避免地带有一定的主观性，新闻写作过程也不例外，无论您是国家通讯社代表，还是某一具体行业的媒体代表，都会具有自己的关注点。为此，在做到客观公正这一基础之外，媒体代表可以通过访问官方网站等方式，广泛阅读所代表媒体，理解并尝试模仿其写作风格和立场，为前瞻性报道做好准备。</p>
+                <br>
+                <p><strong>最后，与场上代表的沟通也很重要。</strong>新闻的一大重要组成部分便是对会场走向的记录，这些记录也能在一定程度上反映媒体代表稿件的真实性。为此，媒体代表需要在会前加强与委员会代表的沟通，避免误解他们的举措，更要避免胡编乱造，引发委员会代表对媒体舆论真实性的质疑。</p>
+                <br>
+                <p>目前，前瞻性报道有多种多样的形式，媒体代表可以在"介绍"与"分析"中选择部分加以侧重，但需要注意有理有据，论证充分。特别是在预测会议走向的过程中，代表更需要根据已掌握的事实进行审慎判断，预测不等于瞎猜。</p>
+            </div>
+        </div>
+
+        <!-- News -->
+        <div id="genre-news" class="section">
+            <div class="back-button" onclick="showPage('news-genre')">
+                ← 返回新闻体裁
+            </div>
+            <h2>消息</h2>
+            <div class="sub-section">
+                <p>消息是新闻文体中最简短的体裁，同时也是时效性最强的体裁。其主要目的是将最近发生的事件快速、真实地向外界传递。</p>
+                <br>
+                <p>因此，在字数少、时效强的情况下，如何撰写有价值的消息，也是对代表的一大考验。一般来说，代表可以采用倒金字塔体进行撰写，即将最重要的信息置于最前，以突出主次、有利于读者阅读。</p>
+                <br>
+                <p>而在模拟联合国会场中，由于会场磋商不断变化，代表更需要从纷繁的事件中选取出有价值的消息进行撰写。</p>
+                <br>
+                <p><strong>如何获取"有价值的消息"？</strong>这需要媒体代表对会场的细致观察以及对会场节奏的把控。例如，媒体代表可以着眼于场上代表广泛关注、反复讨论的话题，也可以对场上代表产出的文件进行进一步的梳理，还可以通过与场上代表的沟通，及时掌握重点内容乃至会场的走向。</p>
+                <br>
+                <p>在达成一定数量的信息采集后，代表应尽可能以简练的语言对这些信息进行表述，避免过多的描写致使消息失去时效性和真实性。</p>
+            </div>
+        </div>
+
+        <!-- Comment -->
+        <div id="genre-comment" class="section">
+            <div class="back-button" onclick="showPage('news-genre')">
+                ← 返回新闻体裁
+            </div>
+            <h2>短评</h2>
+            <div class="sub-section">
+                <p>短评也称简讯，是主新闻中心中最为普遍的一种新闻形式。其由事件的记录以及对事件的评论两部分组成，因此需要媒体代表兼顾新闻的时效性以及对新闻的合理理解。</p>
+                <br>
+                <p>在模拟联合国会场中，短评的部分要素与消息相当，同样需要快速高效地记录下会场内所发生的重点事件，因此倒金字塔体例在此同样适用。但相比消息而言，短评赋予了媒体代表更多的自主性——可以在表达事实之外附上自身对事件的看法。</p>
+                <br>
+                <p>但这并不意味着媒体代表可以随心所欲地表达观点，相反，这也是对媒体代表是否了解自身媒体立场的考验。同样的客观事实，经不同媒体处理后的文稿是不同的，可能平铺直叙，可能措辞犀利；可能表达赞同，可能激烈反对。这还会更加考验媒体代表搜集会场信息的能力——只有合适的资料，才能让代表有效表达自身的观点；一个观点的合理与否，也需要依托于会场所真实发生的事件。</p>
+                <br>
+                <p>一般来说，短评的字数不超过 300 字。如何在有限的字数里兼顾消息与评论，将会是对代表整理、概括、写作能力的综合考验。代表在撰写短评时，需要时刻关注新闻六要素"5W1H"。在六要素的基础上，根据媒体席位的特点，写出或客观公正、或义正言辞、或大胆预测的评论，突出媒体特色、彰显新意，绝不能将事件进行流水线般的书写。</p>
+            </div>
+        </div>
+
+        <!-- Interview -->
+        <div id="genre-interview" class="section">
+            <div class="back-button" onclick="showPage('news-genre')">
+                ← 返回新闻体裁
+            </div>
+            <h2>专访</h2>
+            <div class="sub-section">
+                <p>专访是新闻报道的一种重要形式，记者可以通过专访记录受访者的所思所想，更好地突出受访者的观点与立场，向读者传达受访者的声音。一般而言，记者会在开篇简要介绍事件，并阐明媒体观点；在采访所获得的核心新闻素材置于正文予以展现。同时，记者也可以转述受访者的回答，从而更好地服务于报道主题。</p>
+                <br>
+                <p>在模拟联合国会场中，媒体代表一般需要先确定采访对象。会场上某位代表犀利的发言、代表组建的国家集团，都可能是确定采访对象的契机。因此，媒体代表需要密切关注会议进程，捕捉会场中值得关注的细节，同时找寻与其媒体关系紧密的代表，为预设专访问题奠定基础。</p>
+                <br>
+                <p>预设好问题后，向受访者提问也需要一定的技巧。首先，记者需要与受访者商定适当的采访时机与场合。在模拟联合国会场中，专访一般发生在正式会期外，茶歇、休会等时间于媒体代表而言都是宝贵的采访机会。其次，记者要注意提问的类型。根据提问方式，专访主要有三种类型：漫谈式、直指式和商量式，一般以直指式为主。</p>
+                <br>
+                <p>同时，媒体代表提问时需要注意以下三点：（1）注重开门见山，第一个问题往往很重要；（2）提问要语言通俗、简洁明了；（3）提问要具体、有内容、有深度。</p>
+                <br>
+                <p>此外，简要的问题大纲并不能支撑起一场完整的专访。为了获取更有价值、更具深度的新闻素材，媒体代表还应预测受访者可能会回答什么问题，根据代表的回答预设进一步的追问。</p>
+                <br>
+                <p>最后，专访一般有两种写作形式。第一种是对媒体代表和受访者一问一答的如实记录，这种方式能准确地记录受访者的回答，但是在模拟联合国会场中，媒体代表应当让专访结合一定的分析，以此鲜明表达媒体的立场和观点，避免让专访沦为"流水账"。因此，建议媒体代表采用第二种写作方式，即自行提炼受访者的回答，并且用自己的语言表述，同时表达对受访者回答的立场。</p>
+            </div>
+        </div>
+
+        <!-- Editorial -->
+        <div id="genre-editorial" class="section">
+            <div class="back-button" onclick="showPage('news-genre')">
+                ← 返回新闻体裁
+            </div>
+            <h2>社论</h2>
+            <div class="sub-section">
+                <p>作为主新闻中心常出现的长新闻体裁，社论是代表对重大事件、重大问题，或具有普遍意义的重要事件和问题发表的具有很强指导性的重要评论。</p>
+                <br>
+                <p>在模拟联合国中，代表会随着会议推进撰写相应的社论。一般来说，当场上有了阶段性结果，如对某些问题达成一致或充斥分歧时，媒体代表就可以对其进行深度挖掘。</p>
+                <br>
+                <p>相比短评而言，社论的篇幅更长，这就使社论能够更加充分地表明观点、发表评论，同时也会将媒体代表的观点与立场放大。因此，媒体代表需要在客观公正的基础上，根据所属通讯社的立场和写作风格撰写社论，具有一定的难度。</p>
+                <br>
+                <p>同时，社论的一大要求是观点明确、结构清晰。媒体代表需要先亮出鲜明观点，引发读者的兴趣，然后通过会场的真实情况和所搜集到的资料，以大篇幅论证自身观点，最后再次强调结论、深入浅出。</p>
+                <br>
+                <p>总之，一篇好的社论可以将事实、立场、文笔相结合，广泛吸引受众，起到很好的舆论引导作用，从而在会场中发挥更大的舆论影响力。</p>
+            </div>
+        </div>
+
+        <!-- English Writing Main -->
+        <div id="english-writing" class="section">
+            <h2>英文新闻写作指导</h2>
+            <div class="content-cards">
+                <div class="content-card" onclick="showPage('en-news-genre-main')">
+                    <div class="content-card-header">
+                        <h3>News Genre</h3>
+                    </div>
+                    <div class="content-card-body">
+                        <p>Learn about Brief News, Short Comment, Exclusive Interview, Editorial, and Prospective Report</p>
+                    </div>
+                </div>
+                <div class="content-card" onclick="showPage('notes-en')">
+                    <div class="content-card-header">
+                        <h3>Notes on English News Writing</h3>
+                    </div>
+                    <div class="content-card-body">
+                        <p>Core Feature, Text, Grammar, Vocabulary, and Common Rhetoric Devices</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- English News Genre Main -->
+        <div id="en-news-genre-main" class="section">
+            <div class="back-button" onclick="showPage('english-writing')">
+                ← 返回英文新闻写作指导
+            </div>
+            <h2>News Genre</h2>
+            <div class="genre-cards">
+                <div class="genre-card" onclick="showPage('en-brief-news')">
+                    <div class="genre-card-header">
+                        <h4>Brief News</h4>
+                    </div>
+                    <div class="genre-card-body">
+                        <p>Concise facts delivering essential information (100-200 words)</p>
+                    </div>
+                </div>
+                <div class="genre-card" onclick="showPage('en-short-comment')">
+                    <div class="genre-card-header">
+                        <h4>Short Comment</h4>
+                    </div>
+                    <div class="genre-card-body">
+                        <p>Analysis with tight argument and reasoning (100-250 words)</p>
+                    </div>
+                </div>
+                <div class="genre-card" onclick="showPage('en-exclusive-interview')">
+                    <div class="genre-card-header">
+                        <h4>Exclusive Interview</h4>
+                    </div>
+                    <div class="genre-card-body">
+                        <p>One-to-one conversation delivering narrative (500+ words)</p>
+                    </div>
+                </div>
+                <div class="genre-card" onclick="showPage('en-editorial')">
+                    <div class="genre-card-header">
+                        <h4>Editorial</h4>
+                    </div>
+                    <div class="genre-card-body">
+                        <p>Voice of official position pushing for action (500+ words)</p>
+                    </div>
+                </div>
+                <div class="genre-card" onclick="showPage('en-prospective-report')">
+                    <div class="genre-card-header">
+                        <h4>Prospective Report</h4>
+                    </div>
+                    <div class="genre-card-body">
+                        <p>Forward-looking analysis on future development (500+ words)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- English Genre Detail Pages -->
+        <div id="en-brief-news" class="section">
+            <div class="back-button" onclick="showPage('en-news-genre-main')">
+                ← 返回 News Genre
+            </div>
+            <h2>Brief News</h2>
+            <div class="sub-section">
+                <p>The purpose of the brief news should be to provide an up-to-date report with concise facts that deliver essential information about what is happening in the committee right now. It is always equipped with 5W1H elements of news (What, Who, When, Where, Why and How), typically 100-200 words in length.</p>
+                <br>
+                <p>When journalists write brief news, it is significant that they always start with the most important information at the beginning of the article, especially in the inverted pyramid structure, within third person perspective, neutral and objective tone. For example, the first sentence journalists write at the beginning could be: What definite results or changes were produced by the meeting? ([Who] + [did what] + [on what issue] + [when/where]) and try to use verbs like adopted / failed / postponed / agreed / remained divided, etc to start with.</p>
+                <br>
+                <p>In addition, journalists should avoid editorializing and report only verifiable facts, and what exactly they should focus on are the news signals, like whether there is any "procedural change"? Is there a "change of position" in key countries? Have previous key differences been properly resolved? during the session.</p>
+                <br>
+                <p>Brief news is not simply a record of meeting information, but a real-time update of the meeting status, so that everyone who has read the news reports can understand what we are doing now, and where the specific difficulties and differences are.</p>
+            </div>
+        </div>
+
+        <div id="en-short-comment" class="section">
+            <div class="back-button" onclick="showPage('en-news-genre-main')">
+                ← 返回 News Genre
+            </div>
+            <h2>Short Comment</h2>
+            <div class="sub-section">
+                <p>A short comment usually means analysis ("what it indicts") with a tight argument that explains the significance of a prospective or newsworthy issue. Unlike the brief news, it is naturally spoken with opinions of medias or journalists, while they must earn it with reasoning and evidence. It is typically 100-250 words.</p>
+                <br>
+                <p>Indeed, the impact of brief news on the committee is limited, so the journalists could try writing comments on what has just been issued, such as the speech of the national delegates, an exposed documentary or even the reports from other news agencies.</p>
+                <br>
+                <p>The important thing is that before writing a short comment, journalists should first clarify what they should comment on, for example, commenting on a result that has occurred, a key point of disagreement, or a procedural choice. Therefore, a short comment is a comment on a specific issue in the meeting rather than the whole topic.</p>
+                <br>
+                <p>In general, when journalists write a short comment, he/she could first use a sentence to clarify details they are commenting on, explain the judgment concretely rather than just a statement, and list the reasons for making this judgment based on the events that occurred in the conference.</p>
+                <br>
+                <p>Not only can journalists share their viewpoints through comments, but it also functions as a public opinion supervisor. The writing structure is based on the "claim-proof-implication" loop.</p>
+            </div>
+        </div>
+
+        <div id="en-exclusive-interview" class="section">
+            <div class="back-button" onclick="showPage('en-news-genre-main')">
+                ← 返回 News Genre
+            </div>
+            <h2>Exclusive Interview</h2>
+            <div class="sub-section">
+                <p>The exclusive interview is known as a one-to-one conversation (Q&A) normally between a journalist and a national delegate, which primarily delivers narrative and the latest information across the committee.</p>
+                <br>
+                <p>The interviewee can be a bloc leader, a national delegate eager to express his/her opinions or any delegates throughout the committee. Due to the special format of this kind of news, readers are allowed to have access to the interviewee's viewpoint, motivation and policy position.</p>
+                <br>
+                <p>If a journalist notices that there is someone who needs a platform to share his/her opinions outside the formal caucus, it can be an appropriate chance to have an exclusive interview. Remember that there are some key rules, for example, ask one question at the same time, try to note it politely and narrow the topic if the interviewee hesitates or struggles, never change the meaning of the answers, and avoid using filler words and adopt standard writing forms when summarizing the answers.</p>
+                <br>
+                <p>Moreover, a perfect exclusive interview should consist of high-quality questions ranging from open-ended questions ("What motivated you to propose the resolution of ……?") to forward-looking questions ("Which kind of collaboration would you hope to see by the end of this session?"). The words are typically 500 in minimum.</p>
+                <br>
+                <p>There exist three main valid formats for journalists to choose from:</p>
+                <br>
+                <p><strong>Q&A Format:</strong> Questions and Answers will be presented one by one; Can be in the active voice</p>
+                <p><strong>Narrative Format:</strong> Write in a third-person perspective (storytelling structure) with observations and quotes</p>
+                <p><strong>Hybrid Format:</strong> Narrative introduction followed by an edited Q&A part</p>
+            </div>
+        </div>
+
+        <div id="en-editorial" class="section">
+            <div class="back-button" onclick="showPage('en-news-genre-main')">
+                ← 返回 News Genre
+            </div>
+            <h2>Editorial</h2>
+            <div class="sub-section">
+                <p>The editorial is considered a voice of the official or institutional position of the news agencies, pushing for a course of detailed action or reviewing a significant issue critically. It usually stands for the collective authority of the news agencies'real-world position and interests, which means that it could be one of the most powerful tools to achieve public opinion guidance.</p>
+                <br>
+                <p>When writing the main body of the editorial, it is essential to first clarify that the article should be written from the stance of the news agency rather than that of an individual journalist, which fundamentally distinguishes it from the short comment.</p>
+                <br>
+                <p>Structurally, it is practicable to separate it into three parts: Theme, Demonstration and Conclusion, which follows the order of problem-principle-prescription. In the text, one should not merely advocate political slogans or positions but rather demonstrate from various perspectives, as well as provide any possible consequences, risks, and costs that will ensue from such actions.</p>
+                <br>
+                <p>Strong evidence and argumentative methods are indispensable when making an argument. Ideally, when journalists write editorials, they should avoid including a large amount of redundant content in the summary, such as repetitive explanations of the topic, historical background reviews, or meeting minutes.</p>
+                <br>
+                <p>Instead, they should have to integrate the event and their own views and conduct an in-depth analysis and discussion. What's more, a firm but not hysterical language should be applied while maintaining logical consistency. Typically, the words are 500 in minimum.</p>
+            </div>
+        </div>
+
+        <div id="en-prospective-report" class="section">
+            <div class="back-button" onclick="showPage('en-news-genre-main')">
+                ← 返回 News Genre
+            </div>
+            <h2>Prospective Report</h2>
+            <div class="sub-section">
+                <p>Prospective report, also known as forward-looking or predictive journalism, is based on what may happen in the upcoming conference. It focuses on trends and future development rather than simply summarizing previous strategies; that is, it explores possible actions in the future.</p>
+                <br>
+                <p>One approach to writing prospective report involves conducting a detailed analysis of the topics of the upcoming conference, summarizing the existing measures and policies, and deducing the difficulties and challenges that the issue will continue to encounter.</p>
+                <br>
+                <p>Another principle for writing such news is to assess the current situation of the meeting venue from the perspectives of different countries or organizations and present their demands side by side.</p>
+                <br>
+                <p>Some essential elements exist in a complete perspective report. Firstly, the writer should select solid evidence, such as ground predictions in data, expert opinion or historical precedent. Then, explain the implications clearly—what this prediction means to stakeholders. Also, keep uncertainty acknowledgement by using hedging verbs like may, could, might, suggest, etc.</p>
+                <br>
+                <p>When writing prospective report, journalists can try to focus on the facts that have already been established, such as the drafted or adopted resolutions, the existing disagreements, and the probable course of the conference. Journalists should use conditional clauses to avoid any rough conclusions, and especially pay attention to expressions like …will definitely, …is certain to…, which need to be avoided. The typical words are 500 in minimum.</p>
+                <br>
+                <p>Additionally, long-form news often benefits from the use of subheadings, as real-world journalism frequently combines subheadings to enhance structure and readability. As organizational tools, subheadings can guide readers through complex developments, helping them quickly identify key themes while maintaining a coherent narrative flow.</p>
+                <br>
+                <p>This is particularly important in MPC writing scenarios. By dividing the news into clear sections, subheadings not only increase reader engagement but also make the article appear more professional. To create effective subheadings, journalists should focus on clarity, relevance and a professional news tone.</p>
+                <br>
+                <p>A strong subheading typically summarizes the main points of the following section, using concise and forceful language (usually phrases rather than full sentences), and highlights the most newsworthy elements, such as disputes, progress or uncertainties.</p>
+                <br>
+                <p>In some long-form news, inserting a subheading every three to five paragraphs could reduce reader fatigue, but do not overuse them, as excessive separation may disrupt narrative coherence. Meanwhile, consistency in formatting, including capitalization and style, is also crucial for maintaining professionalism.</p>
+            </div>
+        </div>
+
+        <!-- Notes EN Detail -->
+        <div id="notes-en" class="section">
+            <div class="back-button" onclick="showPage('english-writing')">
+                ← 返回英文新闻写作指导
+            </div>
+            <h2>Notes on English News Writing</h2>
+            
+            <div class="sub-section">
+                <p>Due to the differences in languages and the development of journalism, journalists need to pay attention to the unique features of text, grammar, vocabulary, and common rhetorical devices in English news writing.</p>
+                <br>
+                <p>Before the systematic introduction to these features, journalists shall first be aware of the core requirement of news writing, which is conciseness. Unlike timeliness or proximity, conciseness depends directly on the journalists'writing skills.</p>
+                
+                <div class="example-box">
+                    <h4>📰 新闻范例</h4>
+                    <p><strong>Greek police detain 313 in raid at university after mob attacked police</strong></p>
+                    <p>THESSALONIKI, Greece (AP) — Authorities in Greece on Saturday detained 313 people in a raid on the university campus of the country's second-largest city, Thessaloniki, after riot police were attacked by mobs of people hurling more than 100 Molotov cocktails.</p>
+                    <p>Greek police said roving groups of people wearing hoods emerged from the campus of the Aristotle University of Thessaloniki in the predawn hours Saturday to attack a squad of riot police. The unit is usually deployed some distance from the campus to quell any disturbances after all-night parties that take place on university grounds.</p>
+                    <p>Police said all 313 people were released without being charged.</p>
+                    <p>Such attacks against riot police near the university campus are not uncommon but it's the first time that so many people were detained after such a clash during which an unusually high number of firebombs was used.</p>
+                    <p>Riot police used tear gas and stun grenades to beat back the attackers. One officer was taken to a military hospital for burns to his face and leg while a 21-year-old civilian was treated for respiratory problems, police said.</p>
+                    <p>The university said in a statement that off-campus"extremists"in conjunction with some individuals from within university grounds had committed the attacks. They said an investigation is underway to determine if any students had taken part. They added that no permission had been granted for any party to take place on university grounds.</p>
+                </div>
+
+                <p>Through this news report, we can find that the journalist avoids using complex sentence patterns or uncommon lexicons to make it easier to read and understand. None of the sentences start with infinitive or particle, as all the subjects are put in the beginning so that the news report may not lead to any misunderstanding.</p>
+                <br>
+                <p>Besides, the usage of adjectives and adverbs are restrained to ensure that the description would be as objective as possible. Time adverbial clauses are common in the news, which is probably because the journalist is demonstrating the development of the news event.</p>
+                <br>
+                <p>Meanwhile, the vocabulary remains widely-used so that the news audience would not have to stop to look up the new words in the dictionary halfway.</p>
+                <br>
+                <p>In the MPC, journalists also need to bear in mind that their English news should be concise in their language so that their news report will not cause any reading problem. Except for the unique writing styles like KCNA, journalists need to make the news readable.</p>
+                <br>
+                <p>Apart from this core characteristic, journalists shall improve their news writing in terms of text, grammar, vocabulary, and common rhetorical devices.</p>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="sub-section-title">Text</h3>
+                <p>The feature of text usually refers to how the sentences are organized. Even in the same semantic field, structure should conform to what the text tends to convey. In news writing, it refers to the news structures. The three main kinds of news structures have already been introduced above.</p>
+                <br>
+                <p>Among the news structures, the inverted pyramid structure remains the major choice of journalists to organize their news stories in English. As the essential facts are placed at the beginning of the news stories in the inverted pyramid structure, news lead writing is worth attention in English news writing.</p>
+                <br>
+                <p>The most fundamental way to include 5W1H is the summary lead, in which journalists conclude the news events in a simple summary. Apart from this, there are several ways to write the news lead to make it more attractive.</p>
+                <br>
+                <p><strong>(a) The Quotation Lead</strong></p>
+                <p>As the name suggests, this kind of lead includes the quotation at the beginning of the news. It requires the journalists to familiarize themselves with the words of important figures in the news events so that they can select the appropriate and representative part of speech. Besides, journalists should pay attention to the link between the quotation and the following paragraphs. If used properly, the quotation lead may add to the attractiveness and authenticity.</p>
+                <br>
+                <p><strong>(b) The Question Lead</strong></p>
+                <p>The question lead can effectively arouse the readers'interest when they confront an unexpected interrogative sentence at the beginning of the news. A well-crafted question lead can enhance the engagement of the news audience through inquiry. For this purpose, journalists need to set a focused and concise question, and the following news story should be able to answer the question clearly.</p>
+                <br>
+                <p><strong>(c) The Descriptive Lead</strong></p>
+                <p>The descriptive lead is the news lead that provides the news audience with vivid details. It can construct the scene related to the news events and engage the news audience, conveying the primary context of the news events. When writing this lead, journalists shall use stronger adjectives and active verbs so that the readers can easily visualize the scene.</p>
+                <br>
+                <p>More importantly, context should be balanced with brevity, as the news audience may not be able to process too much information.</p>
+                <br>
+                <p>It should be noted that different types of news leads are not separate from each other. Journalists can combine different techniques when writing a news lead.</p>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="sub-section-title">Grammar</h3>
+                <p><strong>(a) Headline Grammar</strong></p>
+                <p>Typeset in the newspaper, the news reports can attract the attention of readers only through the headlines. Therefore, in English news writing, the headline grammar is worthy of analysis. The following are the unique characteristics of the headlines of English news stories.</p>
+                <br>
+                <p><strong>Sentences are preferred to phrases.</strong> A sentence can always convey more information than a phrase. For example, there is a news event that"tourist boat capsizes in Vietnam, killing dozens". If the title is shortened to a phrase, then it would be"a capsized tourist boat". The loss of action may be detrimental to the completeness of the core news elements.</p>
+                <br>
+                <p><strong>Appropriate omission is necessary.</strong> If a title is too long, it may be difficult for the editors to typeset the news, and more crucially, it can result in the inefficiency of conveying information and the readers'unwillingness to have a look at the following news story.</p>
+                <br>
+                <p>Therefore, journalists usually omit the function words that do not have actual meanings, such as articles, linking verbs, auxiliary verbs, conjunctions, and qualifiers. The following titles from Xinhua News Agency demonstrate how the omission is used in headline language:</p>
+                <br>
+                <p>• Netherlands-China agricultural cooperation holds great potential: Dutch expert</p>
+                <p>• Urgent: Military helicopter crashes in S. Korea's Gyeonggi, 2 in critical condition</p>
+                <p>• China to step up efforts in promoting service consumption</p>
+                <br>
+                <p>The first example demonstrates how to use the quotation in the headline. In English news titles, the speech tag is simple, such as"say"or only a space as is shown in the first example.</p>
+                <br>
+                <p>In the second example, some articles and copulas are omitted to make the headline more concise as articles and copulas hardly carry any meaning in the title. Due to the same reason, the auxiliary verbs are also frequently left out in the headlines, as is shown in the third instance. The auxiliary verb"will", which is used to indicate future events, is replaced with"to".</p>
+                <br>
+                <p><strong>Nominal groups are condensed.</strong> Journalists may often find that they cannot directly omit some qualifiers following the head nouns, as they are quite essential. Therefore, they may replace the qualifiers with the modifiers before the head nouns, such as"Feature: Cambodian villagers hold fish-catching ceremony, reviving age-old tradition".</p>
+                <br>
+                <p><strong>(b) General Grammar</strong></p>
+                <p>Apart from the grammar particular to the headline, there is the general grammar for English news writing, ranging from tenses to sentence elements.</p>
+                <br>
+                <p>Even though English is abundant in its tenses, it is hard for journalists to use all the tenses to describe the news events. The journalists then tend to use the tenses flexibly. And the mixture of tenses, especially the popular usage of the present tense to substitute the past tense, contributes to engaging the news audience as if the news events are just happening when the audience is reading the news.</p>
+                <br>
+                <p>In terms of the characteristics shown in the sentence elements, appositive is commonly used in English news writing. For example: "Kris Mayes, the state's Democratic attorney general, supported the plaintiffs." The example above uses the appositive to further introduce who Kris Mayes is and her political standpoint in this news event.</p>
+                <br>
+                <p>In the news report, journalists may need to involve many important figures to show the panorama of the news events, which forces them to use appositives to convey the key information while maintaining the conciseness of their news stories.</p>
+                <br>
+                <p>Apart from the appositive, direct and indirect quotations are often used. According to a corpus study, words such as"say"and"report", indicating the quotation, are the most frequently used verbs in the corpus.</p>
+                <br>
+                <p>In the English news, journalists tend to quote the direct or indirect speech to provide evidence to the news story, which can add to the credibility and objectivity of the news.</p>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="sub-section-title">Vocabulary</h3>
+                <p>There are two key characteristics concluded from the vocabulary of English news writing, which are conciseness and newness. The choice of words should be concise so that the news audience can read the news effortlessly. Some new words need to be used in order to arouse the interest of the audience.</p>
+                <br>
+                <p>For the sake of conciseness, journalists are likely to use short words, especially in the headlines. For example,"celebrate"can be alternated by"hail","destroy"by"ruin","agreement"by"pact","extinguish"by"end", etc.</p>
+                <br>
+                <p>Furthermore, journalists can take advantage of various methods of shortening, which includes clipped word, initialism, acronym, and blending.</p>
+                <br>
+                <p><strong>(a) Clipped Word</strong></p>
+                <p>A clipped word refers to the words abbreviated by cutting down part of the original word. Most clipped words have already been widely used in English, so it is preferable to use the clipped words in news writing.</p>
+                <br>
+                <p>A clipped word includes apocope, aphaeresis, front and back clipping, and syncope.</p>
+                <br>
+                <p><strong>Apocope</strong> is to cut down the end of a word, as the head of a word is considered more impressive. For example, approximately can be shortened to approx., automobile to auto, examination to exam, laboratory to lab, and gasoline to gas.</p>
+                <br>
+                <p><strong>Aphaeresis</strong> is to cut down the head of a word. Some words can be similar to other words if the end is cut off, so these words can only be shortened by cutting off the word head. For example, if the end of"hamburger"is cut off, it will be"ham". That is why the abbreviation of"hamburger"is"burger". Similar instances include quake from earthquake, scope from telescope, etc.</p>
+                <br>
+                <p><strong>Front and back clipping</strong>, as the name suggests, refers to cutting down both the head and the end of a word to create a shorter word. The examples of this kind of clipping include flu from influenza, fridge from refrigerator, script from prescription, etc.</p>
+                <br>
+                <p><strong>Syncope</strong> applies to the words that have several syllables and similarly-pronounced syllables. This sort of word can be shortened by omitting one of the similarly pronounced syllables. For example, pacificist can be abbreviated to pacifist.</p>
+                <br>
+                <p><strong>(b) Initialism</strong></p>
+                <p>Initialism is to make up a new word with the first letter of several words. It can be used to abbreviate the name of the club or organization, proper nouns, and technical terms.</p>
+                <br>
+                <p>In daily life, there are a lot of examples of initialism, including AD (anno Domini), CEO (chief executive officer), and CBD (central business district).</p>
+                <br>
+                <p>In international politics, there are also many popular instances. The names of many international organizations are shortened in this way, such as the EU and the UN. Some positions are also abbreviated similarly, such as PM from Prime Minister.</p>
+                <br>
+                <p>Although it is concise to use these abbreviations, journalists should bear in mind that they need to demonstrate the full name of the abbreviation in case the news audience gets puzzled by the popping-out abbreviations.</p>
+                <br>
+                <p><strong>(c) Acronym</strong></p>
+                <p>Acronym is similar to initialism as it is formed from the initial letters of a series of words. The difference is that it is also pronounced as a single word. For example, when we pronounce"UN", we will read out"U"and"N"one by one. However, when pronouncing the acronyms such as NATO, we pronounce it as [ˈneɪtəʊ] instead of"N","A","T", and"O".</p>
+                <br>
+                <p>There are many similar words, including UNESCO, APEC, and ASEAN.</p>
+                <br>
+                <p><strong>(d) Blending</strong></p>
+                <p>Blending is to form a new word through combining parts of two words or a word plus a part of another word. Such words have already been frequently used in daily life, such as smog (smoke+fog), motel (motor+hotel), and Microsoft (microcomputer+software).</p>
+                <br>
+                <p>Blending is widely used in news writing as it can conform to the requirements of conciseness and newness. Some well-known examples include dawk (dove+hawk) and stagflation (stagnation and inflation). Some blended words are then popularly used and get involved in daily spoken English, like hijack and ecology.</p>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="sub-section-title">Common Rhetorical Devices</h3>
+                <p>Rhetorical devices are often used in English news writing to make the news reports more attractive. Though it can be difficult for the delegates to immediately apply the various rhetorical devices to their news writing, it can be a long-term goal to improve their writing skills via practice.</p>
+                <br>
+                <p><strong>(a) Alliteration</strong></p>
+                <p>Alliteration is the repetition of the consonant sound at the beginning of two or more words. Using alliteration, journalists can make their news stories read smoothly. Some common phrases take advantage of alliteration, such as Coca-Cola, first and foremost, with might and main. Journalists can try to use either the common phrases with alliteration or the self-created phrases with alliteration.</p>
+                <br>
+                <p><strong>(b) End Rhyme</strong></p>
+                <p>End rhyme is similar to alliteration as it is also a kind of rhyming. End rhyme refers to the repetition of the last syllables at the end of two or more words. There are different types of end rhyme, including double rhyme and triple rhyme, full rhyme and half rhyme, and masculine rhyme and feminine rhyme.</p>
+                <br>
+                <p>End rhyme can be combined with alliteration, especially in the headlines, which may contribute to an unforgettable title.</p>
+                <br>
+                <p><strong>(c) Parallel Structure</strong></p>
+                <p>Parallel structure is to use the same pattern of words, showing that two or more ideas are of the same level of importance. A famous example of parallel structure is from Gettysburg Address by Abraham Lincoln that government of the people, by the people, for the people shall not perish from the earth, which perfectly illustrates the relationship between the government and the people with the concise parallel structure.</p>
+                <br>
+                <p>Journalists can emphasize something they consider important via the parallel structure, which may also make the news story powerful in its sentence pattern.</p>
+                <br>
+                <p><strong>(d) Metonymy</strong></p>
+                <p>Metonymy refers to calling something or somebody not by its name but by the name of something that is closely relevant. It should be noted that, in metonymy, the latter is not part of the former.</p>
+                <br>
+                <p>There are quite a lot of examples in journalism, such as the White House representing the American government, and Downing Street representing the British government. Metonymy can contribute to the vividness of the language and help avoid dull repetition.</p>
+                <br>
+                <p><strong>(e) Pun</strong></p>
+                <p>Pun is a form of word play that deliberately exploits ambiguity between similar-sounding words for humorous or rhetorical effect. Appropriate usage of puns can make the news reports more interesting so that the news audience will not get bored when reading a long piece of news.</p>
+                <br>
+                <p>For example, the headline"Miles Apart: Immigration"means the policy of immigration published by Trump's administration will separate family members miles apart, and at the same time, it can mean the policies are miles apart from the willingness of the people.</p>
+                <br>
+                <p><strong>(f) Simile & Metaphor</strong></p>
+                <p>Simile is a figure of speech that compares one thing to another explicitly. The usage of simile is often accompanied by the signal words including"like"and"as". In contrast with simile, metaphor does not involve any usage of the signal words.</p>
+                <br>
+                <p>Both simile and metaphor may help the news audience understand what the journalists want to convey.</p>
+                <br>
+                <p><strong>(g) Repetition</strong></p>
+                <p>Repetition is the simple repeating of a word or a phrase in order to emphasize. There are three types of repetition, which include repetition of a single word without any other words in between, repetition of a word or a phrase at the beginning of every clause, and repetition of a word or phrase at the end of every clause.</p>
+                <br>
+                <p>Although it can be easy to repeat, journalists should avoid unnecessary repetition, which may only add to the length of the news.</p>
+                <br>
+                <p><strong>(h) Euphemism</strong></p>
+                <p>Euphemism refers to the replacement of a mild, inoffensive, uncontroversial word for a frank expression that may offend or suggest something unpleasant to the audience. It has been common to use euphemism in the political context for the sake of political correctness.</p>
+                <br>
+                <p>For example, it is considered impolite to call the black"the black". Instead,"African American"is used.</p>
+                <br>
+                <p>Above is the systematic introduction of the notes on English news writing. In the model UN conference, delegates also need to pay attention to some particular words, like"delegate"instead of"representative". And they should always bear in mind that they are simulating the conference, so they must not mention the name of the model UN conference.</p>
+            </div>
+        </div>
+
+        <!-- Newspaper Design -->
+        <div id="newspaper-design" class="section">
+            <h2>报纸排版指导</h2>
+            <div class="sub-section">
+                <p>报纸的设计编排在某种程度上是视觉艺术与新闻传播的融合。正如现代报纸设计之父 Edmund Arnold 所说："理解新闻学要素并回归基础，是实现设计潜能的唯一路径"。</p>
+                <br>
+                <p>在排版报纸时常用的软件有 Canva（可画）和 Adobe InDesign。其中 Canva 有网页版和应用版，支持在线编辑与设计，有丰富的模板和简便的操作界面，操作界面逻辑简单，适合快速输出和没有软件安装需求。</p>
+                <br>
+                <p>而 Adobe InDesign 则是一款行业内专业的排版软件，支持报纸、杂志、海报等复杂布局，其支持专业排版术语的精细控制，如段落样式、字距与文字色彩等等，适合高质量产出和有一定设计能力基础的代表使用。</p>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="sub-section-title">版面元素</h3>
+                <p>报纸的版面元素是构成新闻页面的基本单位，其分为报头、标题正文与栏目、图片与视觉元素以及署名和日期地点行。</p>
+                <br>
+                <p><strong>报头（Nameplate）</strong>是一份报纸最显著的标识，通常位于头版的顶部，以独特的字体展示报纸名称。报头的设计不仅是视觉识别的起点，更像是出版物专业性与权威性的象征。</p>
+                <br>
+                <p><strong>标题（Headline）</strong>则是报纸中最核心的文字元素之一，用于传达新闻的核心内容，其功能在于吸引读者的注意力，将信息以可识别的方式呈现给读者。其中主标题（Deck）需要以粗体、醒目的字体呈现；副标题（Kicker/Sub-headline）则作为主标题的补充，提供更多细节。</p>
+                <br>
+                <p><strong>正文（Body Text）</strong>是报纸中内容的主体，通常会以分块栏目形式所排列。分栏设计的核心是提升阅读体验，可以有效降低阅读冗长堆叠文字时的疲劳感。</p>
+                <br>
+                <p><strong>图片（Photographs）</strong>是一份报纸中最具吸引力的视觉元素，通常被认为能够加快读者信息获取的速度，方便抽象概念的表达，使整个报纸更具有艺术性与平衡美感。</p>
+                <br>
+                <p><strong>署名行（Byline）</strong>是标明文章作者或通讯社身份的重要元素，设立之初，其主要功能在于建立问责制度和专业信誉，用于追溯文稿来源。</p>
+                <br>
+                <p><strong>日期地点行（Dateline）</strong>则标明该报纸的发行地点发行日期。</p>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="sub-section-title">版面要求</h3>
+                <p><strong>视觉层级（Visual Hierarchy）</strong>是报纸设计的核心原则，指通过视觉手段引导读者按重要性顺序浏览内容，这其中包含了六个基本变量，即字体大小（size）、字体重量（weight）、字体样式（style）、字体颜色（colour）、位置（position）和间距（spacing）。</p>
+                <br>
+                <p>在 Smashing Magazine 的深度分析中指出："字体层级的概念是指根据内容的相对重要性进行视觉组织"。换言之，我们在页面或空间上组织文本、标题、副标题、栏目、段落、标注等的方式，能够表明了它们的重要性关联，从而引导读者视线。</p>
+                <br>
+                <p>字号是建立层级最直观的手段，标题通常采用 20 像素以上的字号，副标题次之，正文最小（约 10-12 像素）。在字重方面，粗体字具有更强的视觉存在感，因此常用于标题；常规或细体字则适合正文，可以有效避免读者在阅读时产生视觉疲劳。</p>
+                <br>
+                <p>颜色与对比度同样是建立层级的重要工具，其中高对比度的标题能引导读者视线至最重要的信息；而正文则需保持适度对比用以确保可读性，例如，深灰色底白底通常比纯黑色更为柔和。</p>
+                <br>
+                <p>保持版面内不同栏目的对齐对提升一份报纸的专业感至关重要。栏目应保持相同宽度，顶部或底部对齐，彼此间距均匀。图片与文字的对齐能创造秩序感与关联性。</p>
+                <br>
+                <p>同时，保持一个合适的文字与图片的比例可以正向提升读者的阅读体验，但这也会因报纸类型和内容性质而有细微差距。</p>
+                <br>
+                <p>段落长度与间距将会直接影响一份报纸的可读性。一个较短的段落配合充足的间距被认为更易于读者理解内容；而元素之间（标题、正文、图片）的一致间距有助于创造韵律感和平衡感。</p>
+                <br>
+                <p>最后，在考虑新闻排版时，常常将与会场议题强相关的重点问题评论和专题报道等应占据一份报纸相对醒目的位置，补充会场信息的新闻则居于次要位置，至于直接呈现会场信息的消息，则可以将其放在报纸左右边缘位置。</p>
+                <br>
+                <p>不同的主题之间需要进行分区，并以小标题标注分区名称，不同分区之间则使用线条或留白进行分割。</p>
+            </div>
+        </div>
+
+        <!-- Video Guide -->
+        <div id="video-guide" class="section">
+            <h2>视频新闻制作指导</h2>
+            <div class="sub-section">
+                <p>在制作视频新闻的过程中，记者既需要关注其选题是否合适，也需要通过完整的结构、恰当的形式以及拍摄和剪辑向受众呈现新闻内容。一条好的视频新闻，能够凭借这种形式，更好地传播有价值、真实的新闻内容。</p>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="sub-section-title">视频新闻选题</h3>
+                <p>新闻的选题既需要考虑可行性，也需要基于媒体本身的特性。在视频新闻的时长内，记者往往难以直接迁移几百字的稿件内容。因而，记者需要选取一个适合切入的角度，以简明清晰的脚本展现这条新闻的焦点。</p>
+                <br>
+                <p>在选取角度时，一可以考虑媒体的新闻受众画像。记者可以从媒体的特性出发，如该媒体是商业媒体或官方媒体、国际媒体或区域媒体，并基于媒体过往新闻报道的立场，确认相应的视角进行选题和报道，进而保证新闻受众和所选报道角度在心理上的趋近性。</p>
+                <br>
+                <p>二可以考虑拍摄的可行性。记者在构思选题时，应考虑在有限的时间内，是否能够讲清楚这一内容，是否能够以足够吸引受众的形式进行新闻的呈现，从而充分发挥短视频新闻短、平、快的特点与多模态媒介的传播优势。</p>
+                <br>
+                <p>在模联会场中，记者在进行视频新闻选题时，可以从会场的磋商焦点入手，关注代表发言、新闻发布会、文件介绍等议程环节，选取以媒体受众更为攸关的部分进行报道。</p>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="sub-section-title">视频新闻结构</h3>
+                <p>不同媒体对于其视频视频的生产路径和标准都有所不同，与其自身的媒体属性相关。例如，BBC 作为老牌的电视新闻，其视频新闻保留了电视栏目的特性，注重以长篇的视频新闻进行深度、完整的新闻报道；而像美联社、新华社这类的通讯社，其视频新闻则延续了其新闻稿件的特征，在报道消息类的新闻事件时，视频时长甚至可以压缩至 10 秒内，以最简洁的方式呈现新闻要点。</p>
+                <br>
+                <p>在本次会议中，基于上文的陈述，本部分主要介绍三种适用于短视频新闻的结构，可用于消息和短评的呈现。</p>
+                <br>
+                <p><strong>第一种是倒金字塔式的视频新闻。</strong>在信息过载的媒介环境下，记者若希望抓住受众的注意力，"黄金 3 秒法则"是当下短视频新闻叙事策略的核心逻辑，能够将最具新闻价值的新闻要素置于最前端的倒金字塔结构依然适用于短视频新闻的生产。记者需要提炼核心新闻事件，在视频开头的几秒内吸引读者，随后再对新闻事件的次要内容进行补充报道。必要时，一些消息可以只保留最具有价值的部分，例如新华社在报道"国家主席习近平同美国总统特朗普通电话"的消息时，仅保留这一最核心、最凝练的内容，仅需 7 秒便可以完成这一新闻的报道。</p>
+                <br>
+                <p><strong>第二种是三段式的结构，</strong>将整个视频分为开场 - 主体 - 结尾三个部分。开场引入新闻的主要内容，主体按照逻辑顺序报道新闻事件，结尾对新闻进行总结升华。这类报道模式需注重开场方式不可过于生硬，可以通过悬念或提问来进行引入；主体部分对于新闻事件的报道应更为完整和逻辑化，便于读者了解事件的来龙去脉；结尾时可以加入媒体的观点和评价，阐明媒体对这一事件的立场。</p>
+                <br>
+                <p><strong>第三种是平铺式的结构，</strong>这类结构多见于现场播报和采访报道。在使用这类结构时，记者的重心往往是将当下的状况直接呈现给受众，记者需要捕捉现场具有价值的画面和声音，必要时辅以现场的讲解，将现场的情况以更加真实的状态予以展现。</p>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="sub-section-title">视频新闻要素</h3>
+                <p>视频新闻的主要部分包括三类模态：文字模态、声音模态、视频模态。</p>
+                <br>
+                <p>在视频新闻中，受众难以通过简单的视频和声音素材被吸引，或是知晓新闻事件的整个情况。记者需要通过增加标题、字幕等文字模态，更加清晰地展现新闻内容。好的画面注释有时可以为整个视频奠定情感基调，受众在观看时也才能更加与新闻事件"同频共振"。</p>
+                <br>
+                <p>声音不仅可以传达信号，同时也可以传递伴随而来的各类情感。声音模态在视频新闻中能够帮助进行情景建构和情绪渲染。记者可以通过视频原声、背景音、解说和新闻播报等方式传达信息，并增强感染力。</p>
+                <br>
+                <p>视频模态直接将视频新闻和新闻稿件、新闻图像相区分。视频模态既可以包含现场视频素材，将现场直接还原给新闻受众，使新闻具有更强的可信度；也可以直接展现新闻主体的状态，通过视觉元素实现记者与受众的互动。</p>
+                <br>
+                <p>在新闻主体之外，记者也需注意在制作视频新闻时，可以参考所属媒体过往的视频新闻作品，补充相应的格式化素材，如片头、媒体 logo、媒体介绍等。</p>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="sub-section-title">拍摄与剪辑</h3>
+                <p>视频如何进行拍摄和剪辑同样关系到新闻的呈现效果。由于传播平台的不同，横屏和竖屏的视频新闻都较为常见。在模联中，我们可以主要考虑采用横屏的拍摄方式以及 16 : 9 这一常见的画面比例。</p>
+                <br>
+                <p>拍摄素材也并非一定需要专业的摄像设备，采用手机即可，为了保证画面的清晰，在拍摄时建议使用 1080p 的分辨率。在具体的拍摄过程中，记者需要考虑采光、背景、画面结构、画面稳定性、收音效果等方面的问题，从画面所要传递的意图与受众对于视频新闻的需求两方面进行考虑。</p>
+                <br>
+                <p>而在视频新闻的剪辑上，记者可以采用 Adobe Premiere 等专业化的软件进行剪辑，也可以通过剪映等通用软件进行素材的处理。记者无需过度对画面进行处理，可以采用一些 AI 工具对字幕的生成等工作进行辅助。</p>
+            </div>
+        </div>
+
+        <!-- Video News -->
+        <div id="video-news" class="section">
+            <h2>视频新闻：从 CCTV 到 bilibili</h2>
+            
+            <div class="content-section">
+                <h3 class="content-section-title">我们为什么要在模联里面做视频新闻</h3>
+                <div class="content-section-content">
+                    <p>传播媒介在变，新闻媒体所生产的新闻类型也需要变。从智能手机问世到短视频平台风靡，视频新闻已不止停留在各大电视台里。官方媒体与商业媒体都在或多或少地进行转型，新闻记者也不单单停留在转播间的画面上。我们能够看到总台记者在 bilibili 带观众走进联合国，与新闻受众建立更加紧密、直接的联系。</p>
+                    <p>与此同时，传统的新闻稿件或许也不再能够那么有效地支持主新闻中心发挥其作用，代表或忙于磋商，或急于写文件，视频新闻的使用恰恰也是在模拟媒体从纷繁复杂的信息洪流中"抢回"新闻受众，重现"第四权力"不可忽视的作用。</p>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h3 class="content-section-title">如何制作视频新闻</h3>
+                <div class="content-section-content">
+                    <p><strong>选题策划</strong>：确定视频新闻的主题和角度，结合会议热点和受众兴趣。选题应具有新闻价值，能够引起代表们的关注和共鸣。在模联会议中，可以关注重要决议的通过、精彩辩论瞬间、代表采访等内容。</p>
+                    <p><strong>脚本撰写</strong>：根据选题撰写视频脚本，包括开场白、主体内容、结尾总结等部分。脚本应简洁明了，突出核心信息，同时考虑画面配合和时长控制。一般视频新闻时长控制在 1-3 分钟为宜。</p>
+                    <p><strong>拍摄执行</strong>：使用手机或相机进行拍摄，注意光线、角度、稳定性等基本要素。采访环节需提前准备问题，确保被访者表达清晰。会议现场拍摄需注意不影响正常会议进程，遵守会场规则。</p>
+                    <p><strong>后期制作</strong>：使用剪辑软件进行视频剪辑，添加字幕、转场、背景音乐等元素。确保画面流畅、音画同步、信息准确。完成后可通过 B 站、微信视频号等平台发布，扩大传播效果。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- AI+MPC -->
+        <div id="ai-mpc" class="section">
+            <h2>AI+MPC：AI 如何提质增效</h2>
+            
+            <div class="content-section">
+                <h3 class="content-section-title">本委员会为何允许使用 AI</h3>
+                <div class="content-section-content">
+                    <p>正如学术团队在委员会介绍中所陈述的，新技术的发展正在极大地改变过往的新闻生产过程。今天，我们可以看到 AI 能够提升记者的工作效率、资料搜集的系统性和全面性，甚至以一种非常彻底的方式，改变了媒体和受众的关系，从而使得记者需要重构自己的工作模式，来适应这样一个时代中大众对于新闻媒体的期待。</p>
+                    <p>因此，在本次会议中，我们希望将委员会的工作重心放在新闻内容的产出上，我们希望各位代表能够更用心地打磨自己的新闻稿件，产出更高质量、更具吸引力的新闻，满足与会代表对于媒体的期待，同时践行 MPC 媒体引导和监督的职责。</p>
+                    <p>我们禁止代表通过 AI 直接生成内容，但是我们支持你通过 AI 来让你快速上手报纸的设计、视频的剪辑，甚至以一些更多元、更创新的形式来使用 AI。AI 的发展日新月异，能够赋能，也能够颠覆。最后，希望各位代表在会议中能够有所收获。</p>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h3 class="content-section-title">我们可以用 AI 来</h3>
+                <ul class="content-list">
+                    <li><strong>支持一些基本的工作</strong>：比如可以在专访时进行音频的转录，提高素材收集的准确性和完整性。AI 转录工具能够快速将采访录音转换为文字，大大节省人工整理时间，让记者能够更专注于采访内容的挖掘和新闻稿的撰写。</li>
+                    <li><strong>优化传播载体</strong>：当下常用的设计软件和剪辑软件都或多或少地提供了一些 AI 服务。从智能排版到自动剪辑，从图片生成到色彩调整，AI 工具能够帮助代表更高效地完成报纸设计和视频制作，让新闻作品更具视觉吸引力和传播力。</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h3 class="content-section-title">可能会用到的 AI Tool</h3>
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <h4>Canva AI</h4>
+                    </div>
+                    <div class="tool-card">
+                        <h4>Poe AI</h4>
+                    </div>
+                    <div class="tool-card">
+                        <h4>星流 agent</h4>
+                    </div>
+                    <div class="tool-card">
+                        <h4>Capcut AI</h4>
+                    </div>
+                    <div class="tool-card">
+                        <h4>Grammarly</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h3 class="content-section-title">AI 使用小 tips</h3>
+                <ul class="content-list">
+                    <li><strong>优化 Prompt 提高效率</strong>：我们在使用现有的一些 AI tool 时，会发现这些工具即使可以免费使用，但对于用户的使用频率/强度有一定限制。因此，我们在使用时，可以借助 Gemini、Qwen、Kimi 等大模型来优化我们的 prompt，以更准确的指令让 AI 进行生成，而非一句一句地调试 AI tool。</li>
+                    <li><strong>注意隐私与准确性</strong>：此外，AI 并非绝对安全、完美，在使用时需要注意个人隐私的保护，并注意 AI 产出内容的准确性，避免导致潜在的学术不端。</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Motion Advice -->
+        <div id="motion-advice" class="section">
+            <h2>学术准备建议</h2>
+            
+            <div class="sub-section">
+                <h3 class="sub-section-title">会前准备指南</h3>
+                <p>主新闻中心的媒体代表应当在会前进行充足的准备，对于会场的情况才能了然于心，所需的学术准备包括但不限于：</p>
+                <br>
+                <p>• 了解所驻会场的议题与议事规则，阅读该会场的背景文件。唯有对所驻场的会场有足够的了解，才能支撑媒体代表对于国家代表的言行进行判断；</p>
+                <p>• 查阅相关资料，综合各个通讯社或报社对于某个问题的新闻报道。在参考新闻报道时，报道往往会因为通讯社或报社的所处国家或地区、当时的信息接受条件和信息环境而有失其客观性；</p>
+                <p>• 在确定席位后着重了解所代表席位的新闻写作格式与模式。媒体代表应当根据所代表的通讯社或报社的写作风格和格式进行写作；</p>
+                <p>• 进入所驻会场群，与主要国家的代表进行访谈，了解其主要立场；</p>
+                <p>• 结合会场实际情况，撰写前瞻性报道。前瞻性报道可以影响会场的议题设置，促进议题更合理地被讨论，当然这需要基于媒体代表对于议题的充分了解。</p>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="sub-section-title">需要思考的问题</h3>
+                <p>（1）新闻报道会受到哪些因素的影响？</p>
+                <p>（2）如何保持新闻客观性与媒体立场性之间的平衡？</p>
+                <p>（3）主新闻中心的代表应当如何发挥出主新闻中心应有的作用？</p>
+                <p>（4）所代表媒体的立场和新闻报道风格是什么样的？</p>
+                <p>（5）对于不同类型的媒体，其媒体立场和其所在国家立场的关联有何不同？</p>
+                <p>（6）主新闻中心代表可以如何通过新闻发布会获取新闻素材？</p>
+                <p>（7）驻场会场有哪些亟须讨论或解决的问题？</p>
+                <p>（8）如何构建视频新闻，才能使其成为会场的有效信息？</p>
+            </div>
+        </div>
+
+        <!-- Download Section -->
+        <div id="download" class="section">
+            <h2>文件下载</h2>
+            <div class="contact-note">
+                <p>即将发布，敬请期待</p>
+            </div>
+        </div>
+
+        <!-- Contact Us -->
+        <div id="contact-us" class="section">
+            <h2>联系我们</h2>
+            
+            <div class="contact-section">
+                <div class="contact-item">
+                    <div class="contact-label">会场群</div>
+                    <div class="contact-value">见录取信息</div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-label">会场公邮</div>
+                    <div class="contact-value">
+                        <a href="mailto:mpc_njunmunc2026@163.com">mpc_njunmunc2026@163.com</a>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-label">学术团队</div>
+                    <div class="contact-value">
+                        <ul class="team-list">
+                            <li>香港中文大学 何奕峰</li>
+                            <li>华东师范大学 陈杨泽轩</li>
+                            <li>利物浦大学 曹泽东</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-note">
+                如有任何疑问，欢迎通过上述渠道与我们联系，我们将尽快回复。
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-slogan">
+            纯粹的 MPC，也是与时俱进的 MPC
+        </div>
+    </footer>
+
+    <script>
+        function showPage(pageId) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+            });
+
+            const targetSection = document.getElementById(pageId);
+            if (targetSection) {
+                targetSection.classList.add('active');
+            }
+
+            if (pageId === 'home') {
+                navLinks[0].classList.add('active');
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
+
